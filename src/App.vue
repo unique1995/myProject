@@ -1,32 +1,45 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+  <router-view></router-view>
+    <Tabbar>
+      <TaItem path="/home">
+        <img src="./assets/img/tabbar/home.svg" slot="item-icon">
+        <img src="./assets/img/tabbar/home_active.svg" slot="item-icon-active">
+        <div slot="item-text">首页</div>
+      </TaItem>
+
+      <TaItem path="/sort">
+        <img src="./assets/img/tabbar/category.svg" slot="item-icon">
+        <img src="./assets/img/tabbar/category_active.svg" slot="item-icon-active">
+        <div slot="item-text">分类</div>
+      </TaItem>
+
+      <TaItem path="/cart">
+        <img src="./assets/img/tabbar/shopcart.svg" slot="item-icon">
+        <img src="./assets/img/tabbar/shopcart_active.svg" slot="item-icon-active">
+        <div slot="item-text">购物车</div>
+      </TaItem>
+
+      <TaItem path="/profile">
+        <img src="./assets/img/tabbar/profile.svg" slot="item-icon">
+        <img src="./assets/img/tabbar/profile_active.svg" slot="item-icon-active">
+        <div slot="item-text">我的</div>
+      </TaItem>
+
+    </Tabbar>
   </div>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+<script>
+import  Tabbar from "./components/tabbar/taBbar";
+import  TaItem from "./components/tabbar/tabbarItem.vue";
+export default {
+  components:{
+    Tabbar,
+    TaItem
   }
 }
+</script>
+<style lang="scss">
+ 
 </style>
