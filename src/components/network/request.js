@@ -5,7 +5,7 @@ export function request(config) {
     baseURL:'http://123.207.32.32:8000',
     // baseURL:'http://adi-v3.dev',
     // baseURL:"https://cnodejs.org/api",
-    timeout:10000
+    timeout:1000
   });
 
   // 请求拦截器
